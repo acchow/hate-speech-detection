@@ -338,7 +338,8 @@ if __name__ == '__main__':
             best_acc = valid_acc_np
             logfile.write("best_acc:" + str(valid_acc_np)+"\n" + "best epoch: " + str(i) + "\n")
             logfile.close()
-            best_acc = valid_acc
+            best_acc = valid_acc_np
+            #best_acc = valid_acc
 
             accs = open("results/accuracys", "w")
 
