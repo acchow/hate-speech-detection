@@ -7,7 +7,8 @@ from torch.utils.data import DataLoader
 
 from module import test
 
-from pytorch_transformers import *
+from transformers import BertModel, BertTokenizer
+# from pytorch_transformers import *
 
 import time
 

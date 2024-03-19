@@ -168,8 +168,8 @@ class ImagesDataLoader(Dataset):
         self.transform = transform
         self.base_path = base_path
 
-        love_paths = list(open(base_path + "/" + love_metadata))
-        hate_paths = list(open(base_path + "/" + hate_metadata))
+        love_paths = list(open(base_path + "/" + love_metadata, encoding = 'utf8'))
+        hate_paths = list(open(base_path + "/" + hate_metadata, encoding = 'utf8'))
 
         love_paths = [[x.strip("\n"), 0.0] for x in love_paths]
         hate_paths = [[x.strip("\n"), 1.0] for x in hate_paths]
@@ -197,7 +197,7 @@ class ImagesDataLoader(Dataset):
         assert image is not None
 
         try:
-            text = open(text_path)
+            text = open(text_path, encoding='utf8')
             text = text.read()
         except:
             text = pytesseract.image_to_string(image, config='--oem 1')
@@ -279,7 +279,7 @@ class ImageTextMatcherDataLoader(Dataset):
         assert image is not None
 
         try:
-            text = open(text_path)
+            text = open(text_path, encoding= 'utf8')
             text = text.read()
         except:
             text = pytesseract.image_to_string(image, config='--oem 1')
@@ -314,7 +314,7 @@ class UnsupervisedMatcherDataLoader(Dataset):
         self.transform = transform
         self.base_path = base_path
 
-        paths = list(open(base_path + "/" + metadata))
+        paths = list(open(base_path + "/" + metadata, encoding = 'utf8'))
 
         total = []
 
@@ -349,7 +349,7 @@ class UnsupervisedMatcherDataLoader(Dataset):
         assert image is not None
 
         try:
-            text = open(text_path)
+            text = open(text_path, encoding = 'utf8')
             text = text.read()
         except:
             text = pytesseract.image_to_string(image, config='--oem 1')
