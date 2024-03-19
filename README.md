@@ -60,6 +60,8 @@ A brief description of the most important parameters are:
 
 
 #### Testing
+Create directories `./models/` and `./results` to store output. 
+
 The input format is the same as training. It will output a text file that contains the image path, the ground truth class and the prediction of the image, separated by spaces. 
 One example per line. 
 
