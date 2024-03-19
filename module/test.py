@@ -186,7 +186,7 @@ class ImagesDataLoader(Dataset):
         # t = time.time()
         image_path = self.data[index][0]
 
-        path = self.base_path + "/" + image_path
+        path = self.base_path + image_path
         text_path = path + ".ocr"
         # print(path)
         t = time.time()

@@ -16,13 +16,17 @@ Since many of the repos are rapidly changing, we include a txt file with the res
 
 #### Data preparation
 
-The data from the paper is not provided, however, you can find some utility script inside `./data/` folder that download hate class memes.
+The data from the paper is not provided. Store data under the `./data/` folder.
 
 The data format requires 4 metadata files. One for each class (hate-nohate) and susbset (validation). Each line of this files represents a data sample. 
 Each line will be a path to the image data. 
 The system will also look for the extistence of the `"path_to_image".ocr` file, which shoud be a txt file with the precomputed ocr extraction.
 Notice that not extracting the OCR previously can take extensive time and can slow the inference and training process up to 2000%.
 All the paths in this file must be relative to the `BASE_PATH` parameter in the code, set to default to `./data/train_data/`
+
+The script `prepare_data.py` sets up the required metadata files given the train.jsonl file from the Facebook hate memes dataset: https://www.kaggle.com/datasets/parthplc/facebook-hateful-meme-dataset/data. Training and validation are split 80/20. 
+
+Note: test.jsonl data is not used
 
 #### Training
 To train the model simply run

@@ -16,6 +16,7 @@ from tensorboardX import SummaryWriter
 from tqdm import tqdm
 import numpy as np
 
+import config
 
 class MultimodalClassifier(nn.Module):
     def __init__(self, image_feat_model, text_feat_model, TOTAL_FEATURES,
@@ -166,11 +167,11 @@ if __name__ == '__main__':
     USE_TEXT = 1
     USE_HATE_WORDS = 0
 
-    TRAIN_METADATA_HATE = "hateMemesList.txt.train"
-    TRAIN_METADATA_GOOD = "redditMemesList.txt.train"
-    VALID_METADATA_HATE = "hateMemesList.txt.valid"
-    VALID_METADATA_GOOD = "redditMemesList.txt.valid"
-    BASE_PATH = "data/train_data"
+    TRAIN_METADATA_HATE = "hate_train.txt"
+    TRAIN_METADATA_GOOD = "nohate_train.txt"
+    VALID_METADATA_HATE = "hate_valid.txt"
+    VALID_METADATA_GOOD = "nohate_valid.txt"
+    BASE_PATH = config.path
 
     MODEL_SAVE = "models/classifier.pt"
 
