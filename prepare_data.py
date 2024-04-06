@@ -3,7 +3,7 @@ import config
 
 if __name__ == "__main__": 
     data = []
-    PATH = config.path
+    PATH = config.path + "/"
     with open(PATH + 'train.jsonl') as f:
         data = [ json.loads(line) for line in f ] 
 

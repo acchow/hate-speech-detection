@@ -1,0 +1,6 @@
+torch 
+torchvision
+opencv-python
+pytesseract
+transformers
+tensorboardX

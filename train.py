@@ -172,7 +172,7 @@ if __name__ == '__main__':
     TRAIN_METADATA_GOOD = "nohate_train.txt"
     VALID_METADATA_HATE = "hate_valid.txt"
     VALID_METADATA_GOOD = "nohate_valid.txt"
-    BASE_PATH = config.path
+    BASE_PATH = config.path + "/"
 
     MODEL_SAVE = "models/classifier.pt"
 

@@ -6,13 +6,14 @@ Multimodal classification (text + image)
 
 ### Usage
 
-#### Instalation
+#### Installation
 The main dependencies for the project are Pytorch (visit pytorch.org for installation), torchvision, OpenCV, numpy, tqdm, tensorflow and tensorboardX.
 Tensorflow is only to support plotting curves with tensorboard.
 
 You will also need BERT implementations from https://github.com/huggingface/transformers.
 
-Since many of the repos are rapidly changing, we include a txt file with the result of the `pip freeze` command, which includes all the libraries installed and their version.
+Original: Since many of the repos are rapidly changing, we include a txt file with the result of the `pip freeze` command, which includes all the libraries installed and their version.
+**Update 4/6/2024**: Install packages from `requirements.txt`
 
 #### Data preparation
 

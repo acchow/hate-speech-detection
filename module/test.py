@@ -168,8 +168,8 @@ class ImagesDataLoader(Dataset):
         self.transform = transform
         self.base_path = base_path
 
-        love_paths = list(open(base_path + "/" + love_metadata, encoding = 'utf8'))
-        hate_paths = list(open(base_path + "/" + hate_metadata, encoding = 'utf8'))
+        love_paths = list(open(base_path + love_metadata, encoding = 'utf8'))
+        hate_paths = list(open(base_path + hate_metadata, encoding = 'utf8'))
 
         love_paths = [[x.strip("\n"), 0.0] for x in love_paths]
         hate_paths = [[x.strip("\n"), 1.0] for x in hate_paths]
@@ -231,8 +231,8 @@ class ImageTextMatcherDataLoader(Dataset):
         self.transform = transform
         self.base_path = base_path
 
-        love_paths = list(open(base_path + "/" + love_metadata))
-        hate_paths = list(open(base_path + "/" + hate_metadata))
+        love_paths = list(open(base_path + love_metadata))
+        hate_paths = list(open(base_path + hate_metadata))
 
         total = []
 
@@ -269,8 +269,8 @@ class ImageTextMatcherDataLoader(Dataset):
 
         # t = time.time()
 
-        path = self.base_path + "/" + self.data[index][0]
-        text_path = self.base_path + "/" + self.data[index][1]
+        path = self.base_path + self.data[index][0]
+        text_path = self.base_path + self.data[index][1]
         # print(path)
         image = cv2.imread(path)
         # print("imread:", time.time() - t)
@@ -314,7 +314,7 @@ class UnsupervisedMatcherDataLoader(Dataset):
         self.transform = transform
         self.base_path = base_path
 
-        paths = list(open(base_path + "/" + metadata, encoding = 'utf8'))
+        paths = list(open(base_path + metadata, encoding = 'utf8'))
 
         total = []
 
@@ -339,8 +339,8 @@ class UnsupervisedMatcherDataLoader(Dataset):
 
         # t = time.time()
 
-        path = self.base_path + "/" + self.data[index][0]
-        text_path = self.base_path + "/" + self.data[index][1]
+        path = self.base_path + self.data[index][0]
+        text_path = self.base_path + self.data[index][1]
         # print(path)
         image = cv2.imread(path)
         # print("imread:", time.time() - t)
